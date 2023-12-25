@@ -11,7 +11,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/confessions", {
+        const res = await fetch("/api/confessions", {
           cache: "no-store",
         });
 

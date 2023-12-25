@@ -18,7 +18,7 @@ const Profile = () => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const res = await fetch(`http://localhost:3000/api/confessions/${name}`, {
+          const res = await fetch(`/api/confessions/${name}`, {
             cache: "no-store",
           });
   
