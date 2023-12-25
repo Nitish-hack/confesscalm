@@ -2,26 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.container{
+  min-height: 90vh;
+}
+button{
+  padding:10px;
+  border:none;
+}
+.theme{
+  transition: 1s all ease;
+  padding:0 100px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.light {
+  background-color: rgb(248 250 252);
+  color: #111;
+}
+
+.dark {
+  background-color: #111;
+  color: #bbb;
+}
+
+.gradient{
+  background: hsla(26, 83%, 55%, 1);
+  background: linear-gradient(225deg, hsla(26, 83%, 55%, 1) 0%, hsla(10, 75%, 2%, 1) 100%);
+  background: -moz-linear-gradient(225deg, hsla(26, 83%, 55%, 1) 0%, hsla(10, 75%, 2%, 1) 100%);
+  background: -webkit-linear-gradient(225deg, hsla(26, 83%, 55%, 1) 0%, hsla(10, 75%, 2%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#EB7E2B", endColorstr="#070201", GradientType=1 );
+}
+
+.bright_gradient{
+  background: hsla(332, 53%, 82%, 1);
+
+  background: linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+  
+  background: -moz-linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+  
+  background: -webkit-linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+  
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E9B7CE", endColorstr="#D3F3F1", GradientType=1 );
+}
+
+.heroimg{
+animation: move 3s infinite ease alternate;
+}
+
+.search::placeholder {
+  color: black;
+  opacity: 1; /* Firefox */
+}
+
+.search::-ms-input-placeholder { /* Edge 12 -18 */
+  color: black;
+}
+
+@keyframes move{
+  from{
+    transform: translateY(-15px);
+  }
+  to{
+    transform: translateY(0px) scale(1.03);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* media query */
+@media screen and (max-width:900px){
+  .theme{
+    padding:0 20px;
+  }
+}
+
+/* tailwind styles */
+.heroitem {
+  @apply  w-1/2 flex flex-col gap-2 justify-center max-md:w-full max-md:items-center;
+}
+.head_text {
+  @apply  w-1/2 flex flex-col gap-2 justify-center max-md:w-full max-md:items-center;
+}
+
+.orange_gradient {
+  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+}
+.dropdown {
+  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-white min-w-[210px] flex flex-col gap-2 justify-end items-end;
+}
+
+.dropdown_link {
+  @apply text-sm  text-gray-700 hover:text-gray-500 font-medium;
 }
