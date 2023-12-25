@@ -28,6 +28,7 @@ export const POST = async (request) => {
     await newConfession.save();
 
     return new NextResponse("Confession has been created", { status: 201 });
+    
   } catch (err) {
   console.log(err);
     return new NextResponse("Database Error", { status: 500 });

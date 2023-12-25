@@ -37,7 +37,12 @@ const Profile = () => {
       fetchData();
     }, [name]); 
   
-    
+    function pushData(newConfession){
+      
+      const newData = [...data, newConfession];
+        setData(newData);
+    }
+
     
     if (session.status === "unauthenticated") {
       router?.push("/login");
@@ -54,7 +59,7 @@ const Profile = () => {
       <div className="flex lg:w-3/4 w-full flex-col gap-2 justify-center max-lg:items-center max-lg:text-center max-lg:gap-4 ">
         <h1 className='sm:text-6xl text-5xl font-extrabold'>Welcome <span className='orange_gradient'>{name}</span></h1>
         <p>Post your confession anonymously, play Stress relief games with our safe and secure platform Confess Calm !</p>
-        <AddConfessionModal />
+        <AddConfessionModal pushData={pushData}/>
       </div> 
      </div>
 

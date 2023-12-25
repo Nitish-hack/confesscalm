@@ -4,19 +4,19 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import { IoClose } from "react-icons/io5";
 import { useSession } from 'next-auth/react';
+import {toast} from "react-toastify"
 
 const style = {
   position: 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 500,
   bgcolor: 'background.paper',
   boxShadow: 24,
   p: 4,
 };
 
-export default function AddConfessionModal() {
+export default function AddConfessionModal({pushData}) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -41,7 +41,22 @@ export default function AddConfessionModal() {
           name
         }),
       });
-      res.status === 201 && console.log("confession added");
+     
+      if(res.status === 201){
+        const currentDate = new Date().toISOString();
+        const newConfession = {
+          title,
+          content,
+          name,
+          createdAt: currentDate,
+        };
+  
+       pushData(newConfession);
+        
+        handleClose();
+        toast("confession added");
+      
+      } 
     } catch (err) { 
       console.log(err); 
     }
@@ -56,7 +71,7 @@ export default function AddConfessionModal() {
         open={open}
         onClose={handleClose}
       >
-        <Box sx={style} className="rounded-lg">
+        <Box sx={style} className="rounded-lg sm:w-2/5 w-3/4">
           <div className='flex flex-col gap-4'>
             <div className="flex justify-between items-center">
               <h2 className='text-3xl text-slate-700'>Add Confession</h2>
