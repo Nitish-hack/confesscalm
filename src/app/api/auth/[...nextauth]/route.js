@@ -44,7 +44,7 @@ const handler = NextAuth({
     }),
   ],
   pages: {
-    error: "/profile/login",
+    error: "/login",
   },
 
 });
