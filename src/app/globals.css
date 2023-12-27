@@ -33,22 +33,22 @@ button{
 }
 
 .bright_gradient{
-  background: hsla(332, 53%, 82%, 1);
+  background: hsla(26, 100%, 88%, 1);
 
-  background: linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+  background: linear-gradient(90deg, hsla(26, 100%, 88%, 1) 0%, hsla(20, 23%, 61%, 1) 59%, hsla(0, 20%, 25%, 1) 100%);
   
-  background: -moz-linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+  background: -moz-linear-gradient(90deg, hsla(26, 100%, 88%, 1) 0%, hsla(20, 23%, 61%, 1) 59%, hsla(0, 20%, 25%, 1) 100%);
   
-  background: -webkit-linear-gradient(90deg, hsla(332, 53%, 82%, 1) 0%, hsla(176, 57%, 89%, 1) 100%);
+  background: -webkit-linear-gradient(90deg, hsla(26, 100%, 88%, 1) 0%, hsla(20, 23%, 61%, 1) 59%, hsla(0, 20%, 25%, 1) 100%);
   
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E9B7CE", endColorstr="#D3F3F1", GradientType=1 );
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFDBC0", endColorstr="#B29383", GradientType=1 );
 }
 
 .heroimg{
 animation: move 3s infinite ease alternate;
 }
 
-.search::placeholder {
+.placeholder_design::placeholder {
   color: black;
   opacity: 1; /* Firefox */
 }
@@ -56,6 +56,27 @@ animation: move 3s infinite ease alternate;
 .search::-ms-input-placeholder { /* Edge 12 -18 */
   color: black;
 }
+/* custom scroll bar styles  */
+.scroll-design::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.scroll-design::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.scroll-design::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: hsl(26, 83%, 55%);
+  background: linear-gradient(225deg, hsla(26, 83%, 55%, 1) 0%, hsla(10, 75%, 2%, 1) 100%);
+  background: -moz-linear-gradient(225deg, hsla(26, 83%, 55%, 1) 0%, hsla(10, 75%, 2%, 1) 100%);
+  background: -webkit-linear-gradient(225deg, hsla(26, 83%, 55%, 1) 0%, hsla(10, 75%, 2%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#EB7E2B", endColorstr="#070201", GradientType=1 );
+}
+
+
 
 @keyframes move{
   from{

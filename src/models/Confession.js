@@ -2,6 +2,21 @@ import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
+const commentSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  desc: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
 const confessionSchema = new Schema(
   {
     title: {
@@ -16,6 +31,7 @@ const confessionSchema = new Schema(
       type: String,
       required: true,
     },
+    comments: [commentSchema],
 
   },
   { timestamps: true }

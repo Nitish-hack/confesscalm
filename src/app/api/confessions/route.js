@@ -7,7 +7,7 @@ export const GET = async (request) => {
   try {
     await connect();
 
-    const confessions = await Confession.find();
+    const confessions = await Confession.find().sort({ createdAt: -1 });
 
     return new NextResponse(JSON.stringify(confessions), { status: 200 });
   } catch (err) {
@@ -20,7 +20,6 @@ export const POST = async (request) => {
   try {
     await connect();
     
-   
     const newConfession = new Confession({
      title,name,content
     });

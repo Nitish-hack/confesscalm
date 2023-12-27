@@ -35,7 +35,7 @@ const Home = () => {
 
       <div className='gradient'>
         <div className='flex justify-center mt-5 p-7 w-full'>
-          <input type='text' placeholder='Search for the confessions...' className='text-black font-semibold search w-3/4 p-5 outline-none rounded-l-lg' />
+          <input type='text' placeholder='Search for the confessions...' className='text-black font-semibold placeholder_design w-3/4 p-5 outline-none rounded-l-lg' />
 
           <button className='bg-slate-400 text-white text-3xl rounded-r-lg '><CiSearch className='font-black' /></button>
         </div>
